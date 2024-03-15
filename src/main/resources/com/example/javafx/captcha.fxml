@@ -7,21 +7,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-            minWidth="-Infinity" prefHeight="320.0" prefWidth="500.0"
-            xmlns="http://javafx.com/javafx/21"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.javafx.CaptchaController"
-
->
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="320.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafx.CaptchaController">
    <children>
       <Label layoutX="203.0" layoutY="38.0" text="Captcha">
          <font>
             <Font size="23.0" />
          </font>
       </Label>
-      <ImageView fx:id="image" fitHeight="100.0" fitWidth="200.0" layoutX="151.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true" />
-      <Button fx:id="verificarBtn" layoutX="201.0" layoutY="259.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="100.0" text="Verificar" />
-      <TextField fx:id="userCaptcha" layoutX="165.0" layoutY="212.0" />
+      <ImageView fx:id="captchaImage" fitHeight="100.0" fitWidth="200.0" layoutX="151.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="verificarBtn" layoutX="201.0" layoutY="259.0" mnemonicParsing="false" onAction="#verificarCaptcha" prefHeight="31.0" prefWidth="100.0" text="Verificar" />
+      <TextField fx:id="userCaptcha" layoutX="166.0" layoutY="221.0" />
+      <Label fx:id="estat" layoutX="88.0" layoutY="197.0" prefHeight="18.0" prefWidth="324.0" textFill="RED" />
    </children>
 </AnchorPane>
