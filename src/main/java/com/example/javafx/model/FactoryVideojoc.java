@@ -1,8 +1,8 @@
 package com.example.javafx.model;
+import java.util.Random;
 
 public class FactoryVideojoc {
-
-    String[] nomsVideojocs = {
+    private String[] nomsVideojocs = {
             "The Legend of Zelda: Breath of the Wild",
             "Super Mario Odyssey",
             "Cyberpunk 2077",
@@ -92,4 +92,50 @@ public class FactoryVideojoc {
             "Astro's Playroom",
             "Bugsnax"
     };
+
+    private String[] plataforma = {
+            "PlayStation 5",
+            "Xbox Series X",
+            "Nintendo Switch",
+            "PlayStation 4",
+            "Xbox One",
+            "Nintendo Wii U",
+            "PlayStation 3",
+            "Xbox 360",
+            "Nintendo Wii",
+            "PlayStation 2",
+            "Xbox",
+            "Nintendo GameCube",
+            "PlayStation",
+            "Nintendo 64",
+            "Sega Dreamcast"
+    };
+
+    private static int anyLlançament(){
+        Random rnd = new Random();
+        return rnd.nextInt(14)+2010;
+    }
+
+    private String[] desenvolupador = {
+            "Electronic Arts",
+            "Ubisoft",
+            "Activision",
+            "Nintendo",
+            "Sony Interactive Entertainment",
+            "Microsoft Studios",
+            "Bethesda Softworks",
+            "Rockstar Games",
+            "Square Enix",
+            "CD Projekt",
+            "Capcom",
+            "Sega",
+            "Epic Games",
+            "Valve Corporation",
+            "Naughty Dog"
+    };
+
+    private int puntuacio() {
+        int puntuacio = 0;
+        return puntuacio;
+    }
 }
