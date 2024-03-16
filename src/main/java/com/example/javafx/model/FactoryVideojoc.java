@@ -2,7 +2,8 @@ package com.example.javafx.model;
 import java.util.Random;
 
 public class FactoryVideojoc {
-    private String[] nomsVideojocs = {
+
+    private String[] videojocs = {
             "The Legend of Zelda: Breath of the Wild",
             "Super Mario Odyssey",
             "Cyberpunk 2077",
@@ -93,7 +94,7 @@ public class FactoryVideojoc {
             "Bugsnax"
     };
 
-    private String[] plataforma = {
+    private String[] plataformes = {
             "PlayStation 5",
             "Xbox Series X",
             "Nintendo Switch",
@@ -111,12 +112,7 @@ public class FactoryVideojoc {
             "Sega Dreamcast"
     };
 
-    private static int anyLlançament(){
-        Random rnd = new Random();
-        return rnd.nextInt(14)+2010;
-    }
-
-    private String[] desenvolupador = {
+    private String[] desenvolupadors = {
             "Electronic Arts",
             "Ubisoft",
             "Activision",
@@ -134,8 +130,22 @@ public class FactoryVideojoc {
             "Naughty Dog"
     };
 
-    private int puntuacio() {
-        int puntuacio = 0;
-        return puntuacio;
+
+    public Videojoc crearVideojocAleatori(){
+        Random rnd = new Random();
+        String nom = videojocs[rnd.nextInt(videojocs.length)];
+        String plataforma = plataformes[rnd.nextInt(plataformes.length)];
+        int anyLlançament = rnd.nextInt(15) + 2010;
+        String desenvolupador = desenvolupadors[rnd.nextInt(desenvolupadors.length)];
+
+        return new Videojoc(nom, plataforma, anyLlançament, desenvolupador, 0);
+    }
+
+    public Videojoc[] crearLlistatVideojocs(int n){
+        Videojoc[] llistat = new Videojoc[n];
+        for (int i = 0; i < n; i++) {
+            llistat[i] = crearVideojocAleatori();
+        }
+        return llistat;
     }
 }
