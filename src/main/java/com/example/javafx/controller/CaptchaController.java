@@ -1,4 +1,4 @@
-package com.example.javafx;
+package com.example.javafx.controller;
 
 import cn.hutool.captcha.*;
 import javafx.fxml.FXML;
