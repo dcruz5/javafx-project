@@ -8,7 +8,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 import java.net.URL;
@@ -42,23 +41,27 @@ public class VideojocsController implements Initializable {
     public static Videojoc[] videojocsAleatoris = fv.crearLlistatVideojocs(30);
 
     public void filtrarVideojocsPerAny() {
-        int any = Integer.parseInt(anyVideojoc.getText().trim());
+        String anyTxt = anyVideojoc.getText().trim();
+        if (!anyTxt.isEmpty()) {
+            int any = Integer.parseInt(anyTxt);
+            List<Videojoc> videojocsFiltrats = new ArrayList<>();
 
-        List<Videojoc> videojocsFiltrats = new ArrayList<>();
-
-        for (Videojoc videojoc : videojocsAleatoris) {
-            if (videojoc.getAnyLlançament() >= any) {
-                videojocsFiltrats.add(videojoc);
+            for (Videojoc videojoc : videojocsAleatoris) {
+                if (videojoc.getAnyLlançament() >= any) {
+                    videojocsFiltrats.add(videojoc);
+                }
             }
+
+            ObservableList<Videojoc> videojocs = FXCollections.observableList(videojocsFiltrats);
+
+            videojocsTable.setItems(videojocs);
+            videojocsTable.refresh();
+            anyVideojoc.clear();
         }
-        ObservableList<Videojoc> videojocs = FXCollections.observableList(videojocsFiltrats);
-        System.out.println(videojocsFiltrats);
-        videojocsTable.setItems(videojocs);
-        videojocsTable.refresh();
     }
 
     public void resetVideojocs() {
-        ObservableList<Videojoc> videojocs = FXCollections.observableList(Arrays.asList(videojocsAleatoris));
+        ObservableList<Videojoc> videojocs = FXCollections.observableList(List.of(videojocsAleatoris));
         videojocsTable.setItems(videojocs);
     }
 

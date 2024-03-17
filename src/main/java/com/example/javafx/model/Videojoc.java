@@ -60,4 +60,16 @@ public class Videojoc {
     public void setPuntuacio(int puntuacio) {
         this.puntuacio = puntuacio;
     }
+
+    @Override
+    public String toString() {
+        return "Videojoc{" +
+                "id=" + id +
+                ", nom='" + nom + '\'' +
+                ", plataforma='" + plataforma + '\'' +
+                ", anyLlançament=" + anyLlançament +
+                ", desenvolupador='" + desenvolupador + '\'' +
+                ", puntuacio=" + puntuacio +
+                '}';
+    }
 }
