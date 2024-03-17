@@ -2,6 +2,7 @@ module com.example.javafx {
     requires javafx.controls;
     requires javafx.fxml;
     requires cn.hutool.captcha;
+    requires java.desktop;
 
     opens com.example.javafx to javafx.fxml;
     exports com.example.javafx;
