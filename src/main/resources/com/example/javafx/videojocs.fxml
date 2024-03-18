@@ -18,7 +18,7 @@
          <children>
              <ImageView fx:id="logotip" fitHeight="150.0" fitWidth="200.0" layoutX="23.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true" >
                   <image>
-                    <Image url="@images/logo.png" />
+                    <Image url="@logo.png" />
                 </image>
              </ImageView>
             <Button fx:id="filtrarBtn" layoutX="56.0" layoutY="328.0" mnemonicParsing="false" text="Filtrar" onAction="#filtrarVideojocsPerAny"/>
